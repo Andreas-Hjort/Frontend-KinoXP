@@ -1,172 +1,201 @@
-html,
-body{
-    background: linear-gradient(45deg, #7b7985, #262a33);
-    min-height: 3000px;
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif; }
-  
-  .container{
-    width: 80%;
-    margin: 0 auto;
-    clear: both; }
-  
-  a {
-    display: inline-block;
-    color: #333;
-    text-decoration: none; }
-  
-  nav {
-    background: linear-gradient(45deg, #7b7985, #000000);
-    height: 80px;
-    line-height: 80px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9998;
-    transition: all 0.5s; }
-    nav.scrollUp {
-      transform: translateY(-80px); }
-    nav ul.navbar-menu {
-      margin: 0;
-      padding: 0;
-      display: inline-block;
-      float: right; }
-      nav ul.navbar-menu li {
-        display: inline-block;
-        margin: 0 10px; }
-        nav ul.navbar-menu li a {
-          color: rgb(139, 136, 136);
-          font-size: 14px; }
-    nav a#brand {
-      text-transform: uppercase;
-      foat: left;
-      font-weight: 800;
-      font-size: 20px; }
-    nav button {
-      background: none;
-      width: 30px;
-      height: 40px;
-      margin-top: 20px;
-      border: none;
-      float: right;
-      display: inline-block;
-      cursor: pointer;
-      display: none; }
-      nav button span {
-        width: 30px;
-        height: 40px;
-        height: 2px;
-        background: rgb(139, 136, 136);
-        display: block;
-        margin: 5px 0; }
-  
-  @media (max-width: 768px) {
-    nav ul.navbar-menu {
-      display: none; }
-    nav button {
-      display: block; } }
-
-
-      .navbar-allign-header{
-        height: 200px;
-    }
-
-    .text-allign{
-         position: absolute;
-            top: 70px; 
-            right: 10px;
-    
-    }
-    
-    
-    table {
-        width: 800px;
-        border-collapse: collapse;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(44, 34, 34, 0.1);
-        margin-left: auto;
-        margin-right: auto;
-    
-    }
-    
-    th,
-    td {
-        padding: 15px;
-        background-color: rgba(255,255,255,0.2);
-        color: #fff;
-       
-    }
-    
-    th {
-        text-align: left;
-    }
-    
-    thead {
-      th {
-          background-color: #55608f;
-          width: 100%;
-      }
-  }
-  
-  tbody {
-    tr {
-        &:hover {
-            background-color: rgba(255,255,255,0.3);
-       }
-   }
-    td {
-        position: relative;
-        &:hover {
-            &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                right: 0;
-                top: -9999px;
-                bottom: -9999px;
-                background-color: rgba(255,255,255,0.2);
-                z-index: -1;
-           }
-       }
-   }
+body {
+  background: linear-gradient(45deg, #49a09d, #493f50);
+  min-height: 3000px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
 }
 
-    h1 {  
-        font-size: 50px;
-        color: #847bf7;
-        text-transform: uppercase;
-        font-weight: normal;
-        line-height: 1;
-        text-align: center;
-        margin: 0px 50px 0 50px;
-        padding-top: -60px;
-      
+.container {
+  width: 80%;
+  margin: 0 auto;
+  clear: both;
+}
+
+a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+}
+
+nav {
+  background: linear-gradient(45deg, #7b7985, #000000);
+  height: 80px;
+  line-height: 80px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9998;
+  transition: all 0.5s;
+}
+
+nav.scrollUp {
+  transform: translateY(-80px);
+}
+
+nav ul.navbar-menu {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: right;
+}
+
+nav ul.navbar-menu li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul.navbar-menu li a {
+  color: rgb(139, 136, 136);
+  font-size: 14px;
+}
+
+nav a#brand {
+  text-transform: uppercase;
+  foat: left;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+nav button {
+  background: none;
+  width: 30px;
+  height: 40px;
+  margin-top: 20px;
+  border: none;
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+  display: none;
+}
+
+nav button span {
+  width: 30px;
+  height: 40px;
+  height: 2px;
+  background: rgb(139, 136, 136);
+  display: block;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  nav ul.navbar-menu {
+    display: none;
+  }
+
+  nav button {
+    display: block;
+  }
+}
+
+
+.navbar-allign-header {
+  height: 200px;
+}
+
+.text-allign {
+  position: absolute;
+  top: 70px;
+  right: 10px;
+}
+
+html,
+.body-table{
+  margin: 0;
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+table {
+  width: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(44, 34, 34, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  table-layout: auto; 
+
+}
+
+th,
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+
+}
+
+th {
+  text-align: left;
+}
+
+thead {
+  
+    background-color: #3a3f52;
+    width: 100%;
+}
+
+tbody {
+
+  tr {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  td {
+    position: relative;
+
+    &:hover {
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -9999px;
+        bottom: -9999px;
+        background-color: rgba(255, 255, 255, 0.2);
+        z-index: -1;
       }
-      
-      
-        h2{  
-        font-size: 50px;
-        color: #847bf7;
-        text-transform: uppercase;
-        font-weight: normal;
-        line-height: 1;
-       text-align: center;
-        margin: 0px 50px 0 50px;
-        padding-top: 0px; 
-      
-       }
-      
-        h3{  
-        font-size: 50px;
-        color: #fff;
-        font-weight: normal;
-        line-height: 1;
-        text-align: center;
-        margin: 0px 0 0;
-        padding-top: 130px; 
-        padding-bottom: 30px;
-       }
+    }
+  }
+}
+
+h1 {
+  font-size: 50px;
+  color: #847bf7;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  margin: 0px 50px 0 50px;
+  padding-top: -60px;
+
+}
+
+
+h2 {
+  font-size: 50px;
+  color: #847bf7;
+  text-transform: uppercase;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  margin: 0px 50px 0 50px;
+  padding-top: 0px;
+
+}
+
+h3 {
+  font-size: 50px;
+  color: #fff;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  margin: 0px 0 0;
+  padding-top: 130px;
+  padding-bottom: 30px;
+}
