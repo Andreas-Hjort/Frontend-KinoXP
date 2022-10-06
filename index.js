@@ -5,8 +5,8 @@ import {
   setActiveLink, adjustForMissingHash, renderTemplate, loadTemplate
 } from "./utils.js"
 
-//import { initMovies } from "./pages/movies/movies.js"
-//import { initShows } from "./pages/shows/shows.js"
+import { initMovies } from "./pages/movies/movies.js"
+import { initShows } from "./pages/shows/shows.js"
 
 window.addEventListener("load", async () => {
 
@@ -37,7 +37,7 @@ window.addEventListener("load", async () => {
   
       "/movies": () => {
         renderTemplate(templateMovies, "content")
-        //initMovies()
+        initMovies()
       },
 
       "/shows": () => {

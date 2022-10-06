@@ -1,9 +1,9 @@
-const URL = ""
+const URL = "http://localhost:8080/movies"
 import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initMovies(){
     document.getElementById("tbl-body").onclick = showAllMovies
-    fetchAllMovies
+    fetchAllMovies()
 }
 
 export async function fetchAllMovies(){
@@ -23,8 +23,6 @@ function showAllMovies(data){
         <td>${movie.created}</td>
         <td>${movie.edited}</td>
         <td>
-        <--!<button> id="${movie.id}-column-id" type="button" skal lige færdigøres-->
-        </td>
         </tr>`)
 
         const tableRowsString = tableRows.join("\n")
