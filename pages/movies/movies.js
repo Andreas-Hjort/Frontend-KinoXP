@@ -14,7 +14,6 @@ export async function fetchAllMovies(){
 function showAllMovies(data){
     const tableRows = data.map(movie => `
         <tr>
-        <td>${movie.id}</td>
         <td>${movie.title}</td>
         <td>${movie.genre}</td>
         <td>${movie.ageLimit}</td>
