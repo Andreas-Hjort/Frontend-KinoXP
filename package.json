@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Andreas-Hjort/Frontend-KinoXP/issues"
   },
-  "homepage": "https://github.com/Andreas-Hjort/Frontend-KinoXP#readme"
+  "homepage": "https://github.com/Andreas-Hjort/Frontend-KinoXP#readme",
+  "dependencies": {
+    "node": "^18.10.0"
+  }
 }
