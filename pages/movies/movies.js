@@ -21,7 +21,7 @@ function showAllMovies(data){
         <td>${movie.runningTime}</td>
         <td>${movie.created}</td>
         <td>${movie.edited}</td>
-        <td>
+    
         </tr>`)
 
         const tableRowsString = tableRows.join("\n")

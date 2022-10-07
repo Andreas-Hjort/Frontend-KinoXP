@@ -42,7 +42,7 @@ window.addEventListener("load", async () => {
 
       "/shows": () => {
         renderTemplate(templateShows, "content")
-        //initShows()
+        initShows()
       },
     })
     .notFound(() => {
