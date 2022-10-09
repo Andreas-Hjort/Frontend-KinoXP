@@ -9,7 +9,7 @@
                         <th scope="col">Genre</th>
                         <th scope="col">Age limit</th>
                         <th scope="col">Production year</th>
-                        <th scope="col">Running time</th>
+                        <th scope="col">Running time</th>   
                         <th scope="col">Created</th>
                         <th scope="col">Last edited</th>
                     </tr>
@@ -21,8 +21,16 @@
         </div>
     </div>
 
-
-
+    <h3>Add movie</h3>
+    <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title"/></div>
+    <div><label for="input-genre" style="min-width: 6em;">Genre</label>&nbsp;<input id="input-genre"/></div>
+    <div><label for="input-ageLimit" style="min-width: 6em;">Age limit</label>&nbsp;<input id="input-ageLimit"/></div>
+    <div><label for="input-productionYear" style="min-width: 6em;">Production year</label>&nbsp;<input id="input-productionYear"/></div>
+    <div><label for="input-runningtime" style="min-width: 6em;">Running time</label>&nbsp;<input id="input-runningTime"/></div>
+    <br />
+    <button id="bnt-submit-movie">Submit new movie</button>
+    <p id="returned-new-movie">Show returned data, if any</p>
+    <p>Use one of the two GET pages to verify that "something" was added</p>
 
 
 </template>
