@@ -7,7 +7,7 @@
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
-                        <th scope="col">Age limit</th>
+                        <th scope="col">Theater</th>
                         <th scope="col">Production year</th>
                         <th scope="col">Running time</th>
                         <th scope="col"></th>
@@ -19,9 +19,14 @@
                 </tbody>
             </table>
         </div>
-    </div> 
-    
+        <h3>Add a Car or a Member</h3>
+        <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"/></div>
+        <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime" type="number" />
+        </div>
+        <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
 
-
-
+        <br />
+        <button id="bnt-submit-show">Submit new item</button>
+        <p id="returned-new-show">Show returned data, if any</p>
+        <p>Use one of the two GET pages to verify that "something" was added</p>
 </template>
