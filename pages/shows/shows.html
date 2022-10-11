@@ -1,32 +1,112 @@
 <template>
-    <div class="body-table">
-        <div class="container-table">
-            <h3>Shows</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Theater</th>
-                        <th scope="col">Production year</th>
-                        <th scope="col">Running time</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody id="tbl-body">
-                    <tr>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <h3>Add a Car or a Member</h3>
-        <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"/></div>
-        <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime" type="number" />
-        </div>
-        <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
+  <div class="body-table">
+    <div class="container-table">
+      <h3>Shows</h3>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Theater</th>
+            <th scope="col">Production year</th>
+            <th scope="col">Running time</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="tbl-body">
+          <tr>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Add a Car or a Member</h3>
+    <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"></div>
+    <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime"
+        type="number" />
+    </div>
+    <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
 
-        <br />
-        <button id="bnt-submit-show">Submit new item</button>
-        <p id="returned-new-show">Show returned data, if any</p>
-        <p>Use one of the two GET pages to verify that "something" was added</p>
+    <br />
+    <button id="bnt-submit-show">Submit new item</button>
+    <p id="returned-new-show">Show returned data, if any</p>
+    <p>Use one of the two GET pages to verify that "something" was added</p>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-edit-show">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit movie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div><label for="modal-input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="modal-input-theater">
+            </div>
+            <div><label for="modal-input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input
+                id="modal-input-showingTime" type="number"/>
+            </div>
+            <div><label for="modal-input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="modal-input-movie" /></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--   
+<div class="modal fade" id="modal-edit-show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit show</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div><label for="modal-input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="modal-input-theater">
+        </div>
+        <div><label for="modal-input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input
+            id="modal-input-showingTime" type="number" />
+        </div>
+        <div><label for="modal-input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="modal-input-movie" /></div>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="submit-changes">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div><label for="modal-input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="modal-input-theater">
+        </div>
+        <div><label for="modal-input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input
+            id="modal-input-showingTime" type="number" />
+        </div>
+        <div><label for="modal-input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="modal-input-movie" /></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </template>
