@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/shows/"
+const URL = "https://kinoxp.azurewebsites.net/shows/"
 import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initShows() {
@@ -82,7 +82,7 @@ function submitEditedShow(id) {
 }
 
 
-function editOne(evt) {
+/**function editOne(evt) {
     document.getElementById("btn-submit-changes").onclick = submitEditedShow
     const target = evt.target
     const id = target.id.replace("-column-id", "")
@@ -99,7 +99,8 @@ function editOne(evt) {
             })
     }
 }
-
+ */
+Ø
 
   function editTarget(evt){
     const target = evt.target
