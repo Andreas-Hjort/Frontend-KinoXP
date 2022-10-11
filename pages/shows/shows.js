@@ -100,7 +100,7 @@ function submitEditedShow(id) {
     }
 }
  */
-Ø
+
 
   function editTarget(evt){
     const target = evt.target
