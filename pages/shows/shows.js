@@ -59,16 +59,15 @@ function addOne() {
 }
 
 
-function submitEditedShow(id) { 
+function submitEditedShow() { 
     const editedShow = {}
-    editedShow.id = id
+    editedShow.id = document.getElementById("id-editshow").innerText
     editedShow.theater = document.getElementById("modal-input-theater").value
     editedShow.showingTime = document.getElementById("modal-input-showingTime").value
     editedShow.movieID = document.getElementById("modal-input-movie").value
     //Now newShow contains all required fields (mathces the DTO on the backend) and values
 
     //Build the options object requred for a PUT 
-
     const options = {}
     options.method = "PUT"
     options.headers = { "Content-type": "application/json",
@@ -84,27 +83,6 @@ function submitEditedShow(id) {
 
     }
 
-
-
-/**function editOne(evt) {
-    document.getElementById("btn-submit-changes").onclick = submitEditedShow
-    const target = evt.target
-    const id = target.id.replace("-column-id", "")
-    function findShow() {
-        const showToEditId = document.getElementById(id).value
-        document.getElementById = editTarget
-        const show = fetch(URL + showToEditId)
-            .then(r => r.json())
-            .then(show => {
-                editedCar.id = document.getElementById("edit-show-id").innerText
-                document.getElementById("edit-input-theater").value = show.theater
-                document.getElementById("edit-input-showingTime").value = show.showingTime
-                document.getElementById("edit-input-movie").value = show.movieID
-            })
-    }
-}
- */
-
 function editTarget(evt){
     const target = evt.target
     if (!target.id.includes("-column-id")) {
@@ -112,7 +90,8 @@ function editTarget(evt){
     }
     else {
     const id = target.id.replace("-column-id", "")
-    document.getElementById("button-edited-submit").onclick = submitEditedShow(id)
+    document.getElementById("id-editcar").innerText = id
+    document.getElementById("btn-edited-submit").onclick = submitEditedShow
   }  
 }
 
