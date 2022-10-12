@@ -5,7 +5,6 @@ export function initShows() {
     fetchAllShows()
     addOne() 
     document.getElementById("tbl-body").onclick = editTarget
-    submitEditedShow(editTarget)
 }
 
 
@@ -111,7 +110,7 @@ function submitEditedShow(id) {
   function editTarget(evt){
     const target = evt.target
     const id = target.id.replace("-column-id", "")
-    return id; 
+    submitEditedShow(id)
 }
 
 
