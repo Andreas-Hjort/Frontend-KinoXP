@@ -5,7 +5,6 @@ export function initShows() {
     fetchAllShows()
     addOne() 
     document.getElementById("tbl-body").onclick = editTarget
-    document.getElementById("bnt-edited-submit") = submitEditedShow(editTarget)         
 }
 
 
@@ -61,8 +60,10 @@ function addOne() {
 
 
 function submitEditedShow(id) {
+    document.getElementById("btn-edited-submit").onclick=makeNewShow(id)
+    function makeNewShow(findid){
     const editedShow = {}
-    editedShow.id = id
+    editedShow.id = findid
     editedShow.theater = document.getElementById("modal-input-theater").value
     editedShow.showingTime = document.getElementById("modal-input-showingTime").value
     editedShow.movieID = document.getElementById("modal-input-movie").value
@@ -82,6 +83,8 @@ function submitEditedShow(id) {
             console.log("No Data returned from the server")
             alert("Show was succesfully edited - Not the right way to report this")
         })
+
+    }
 }
 
 
@@ -107,7 +110,7 @@ function submitEditedShow(id) {
   function editTarget(evt){
     const target = evt.target
     const id = target.id.replace("-column-id", "")
-    return id;
+    submitEditedShow(id)
 }
 
 
