@@ -4,7 +4,8 @@ import { sanitizeStringWithTableRows } from "../../utils.js"
 export function initShows() {
     fetchAllShows()
     addOne() 
-    document.getElementById("tbl-body").onclick = editTarget        
+    document.getElementById("tbl-body").onclick = editTarget
+    document.getElementById("bnt-edited-submit") = submitEditedShow(editTarget)         
 }
 
 
@@ -106,7 +107,7 @@ function submitEditedShow(id) {
   function editTarget(evt){
     const target = evt.target
     const id = target.id.replace("-column-id", "")
-    document.getElementById("btn-edited-submit").onclick = submitEditedShow(id)
+    return id;
 }
 
 
