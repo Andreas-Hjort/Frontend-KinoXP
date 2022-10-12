@@ -7,7 +7,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.container {
+.container-navbar{
   width: 80%;
   margin: 0 auto;
   clear: both;
@@ -102,6 +102,9 @@ nav button span {
   right: 10px;
 }
 
+
+/*_________________________________________________________Table____________________________________________________________________________________________________________________________*/ 
+
 html,
 .body-table{
   margin: 0;
@@ -110,7 +113,7 @@ html,
 }
 
 table {
-  width: 800px;
+  width: 900px;
   border-collapse: collapse;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(44, 34, 34, 0.1);
@@ -164,6 +167,9 @@ tbody {
   }
 }
 
+
+/*_________________________________________________________Titles____________________________________________________________________________________________________________________________*/
+
 h1 {
   font-size: 50px;
   color: #847bf7;
@@ -179,7 +185,7 @@ h1 {
 
 h2 {
   font-size: 50px;
-  color: #847bf7;
+  color: #9a99a5;
   text-transform: uppercase;
   font-weight: normal;
   line-height: 1;
@@ -189,13 +195,59 @@ h2 {
 
 }
 
-h3 {
+.h3-logo {
   font-size: 50px;
   color: #fff;
   font-weight: normal;
   line-height: 1;
   text-align: center;
   margin: 0px 0 0;
-  padding-top: 130px;
-  padding-bottom: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
+
+/*_________________________________________________________Buttons____________________________________________________________________________________________________________________________*/
+.center {
+  margin: 0;
+  padding-top: -10px;
+  padding-bottom: 53px;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+button {
+  margin: 20px;
+}
+
+.btn-1 {
+  background: rgb(13, 13, 14);
+  background: linear-gradient(60deg, #7b7985, #000000);
+  border: none;
+}
+.btn-1:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%);
+}
+
+.custom-btn {
+  width: 900px;
+  height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+/*_______________________________________________FOOTER */

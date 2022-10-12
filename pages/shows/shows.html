@@ -1,7 +1,10 @@
 <template>
   <div class="body-table">
     <div class="container-table">
-      <h3>Shows</h3>
+      <h3 class="h3-logo">Available Shows</h3>
+      <div class="center">
+          <button id="add-show" type="button" class="custom-btn btn-1" data-bs-toggle="modal" data-bs-target="#modal-add-show">Add Show</button>  
+        </div>
       <table>
         <thead>
           <tr>
@@ -11,6 +14,7 @@
             <th scope="col">Production year</th>
             <th scope="col">Running time</th>
             <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody id="tbl-body">
@@ -19,18 +23,6 @@
         </tbody>
       </table>
     </div>
-    <h3>Add a Car or a Member</h3>
-    <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"></div>
-    <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime"
-        type="number" />
-    </div>
-    <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
-
-    <br />
-    <button id="bnt-submit-show">Submit new item</button>
-    <p id="returned-new-show">Show returned data, if any</p>
-    <p>Use one of the two GET pages to verify that "something" was added</p>
-
    <div class="modal" style="position: absolute; top:150px;" tabindex="-1" role="dialog" id="exampleModal">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -40,9 +32,8 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          
           <div class="modal-body">
-            <label for="text-for-id-editcar">Id</label>&nbsp;<input id="id-editshow" />
+           <input id="id-editshow" type="hidden" />
             <div><label for="modal-input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="modal-input-theater">
             </div>
             <div><label for="modal-input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input
@@ -53,6 +44,32 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="btn-edited-submit">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-add-show">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="position:absolute; top: 150px;">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Show</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"></div>
+            <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime"
+                type="number" />
+            </div>
+            <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="bnt-submit-show">Send message</button>
           </div>
         </div>
       </div>

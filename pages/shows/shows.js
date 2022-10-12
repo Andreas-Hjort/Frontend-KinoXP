@@ -4,7 +4,7 @@ import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initShows() {
     fetchAllShows()
-    addOne() 
+    addOne()
     document.getElementById("tbl-body").onclick = editTarget
 }
 
@@ -23,16 +23,16 @@ function showAllShows(data) {
         <td>${show.showingTime}</td>
         <td>${show.movie.runningTime}</td>
         <td>
-        <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>  
+        <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>  
+        </td>
+        <td>
+        <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#deleteShowModal">Delete</button>  
         </td>
         </tr>`)
 
     const tableRowsString = tableRows.join("\n")
     document.getElementById("tbl-body").innerHTML = sanitizeStringWithTableRows(tableRowsString)
 }
-
-
-
 
 
 function addOne() {
@@ -59,8 +59,7 @@ function addOne() {
     }
 }
 
-
-function submitEditedShow() { 
+function submitEditedShow() {
     const editedShow = {}
     editedShow.id = document.getElementById("id-editshow").value
     editedShow.theater = document.getElementById("modal-input-theater").value
@@ -71,7 +70,7 @@ function submitEditedShow() {
     //Build the options object requred for a PUT 
     const options = {}
     options.method = "PUT"
-    options.headers = { "Content-type": "application/json"}
+    options.headers = { "Content-type": "application/json" }
     options.body = JSON.stringify(editedShow)
     //Observe, id is added to the URL
     fetch(URL + editedShow.id + "/" + editedShow.theater + "/" + editedShow.showingTime + "/" + editedShow.movieID, options)
@@ -80,36 +79,26 @@ function submitEditedShow() {
             alert("Show was succesfully edited - Not the right way to report this")
         })
 
-    }
+}
 
-function editTarget(evt){
+function deleteShow(){
+
+}
+
+function editTarget(evt) {
     const target = evt.target
     if (!target.id.includes("-column-id")) {
-    return
+        return
     }
     else {
-    const id = target.id.replace("-column-id", "")
-    document.getElementById("id-editshow").value = id
-    document.getElementById("btn-edited-submit").onclick = submitEditedShow
-  }  
+        const id = target.id.replace("-column-id", "")
+        document.getElementById("id-editshow").value = id
+        document.getElementById("btn-edited-submit").onclick = submitEditedShow
+
+    }
 }
 
 
-$(document).ready(function(){
-    function alignModal(){
-        var modalDialog = $(this).find(".modal-dialog");
-        
-        // Applying the top margin on modal to align it vertically center
-        modalDialog.css("margin-center", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
-    }
-    // Align modal when it is displayed
-    $(".modal").on("shown.bs.modal", alignModal);
-    
-    // Align modal when user resize the window
-    $(window).on("resize", function(){
-        $(".modal:visible").each(alignModal);
-    });   
-});
 
 
 
@@ -117,6 +106,5 @@ $(document).ready(function(){
 
 
 
-  
 
 
