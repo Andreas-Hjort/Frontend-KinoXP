@@ -71,7 +71,9 @@ function submitEditedShow(id) {
 
     const options = {}
     options.method = "PUT"
-    options.headers = { "Content-type": "application/json" }
+    options.headers = { "Content-type": "application/json",
+    'Access-Control-Allow-Origin' : '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'}
     options.body = JSON.stringify(editedShow)
     //Observe, id is added to the URL
     fetch(URL + editedShow.id, options)
