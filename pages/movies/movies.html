@@ -1,9 +1,12 @@
 <template>
+
+    <button id="add-movie" type="button"  class="" data-bs-toggle="modal" data-bs-target="modal-add-movie">Details</button>  
     <div class="body-table">
         <div class="container-table">
             <h3>Available movies</h3>
             <table>
                 <thead>
+    
                     <tr>
                         <th scope="col">Title</th>
                         <th scope="col">Genre</th>
@@ -20,6 +23,31 @@
             </table>
         </div>
     </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="modal-add-movie">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit movie</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-body">
+                <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title"/></div>
+                <div><label for="input-genre" style="min-width: 6em;">Genre</label>&nbsp;<input id="input-genre"/></div>
+                <div><label for="input-ageLimit" style="min-width: 6em;">Age limit</label>&nbsp;<input id="input-ageLimit"/></div>
+                <div><label for="input-productionYear" style="min-width: 6em;">Production year</label>&nbsp;<input id="input-productionYear"/></div>
+                <div><label for="input-runningtime" style="min-width: 6em;">Running time</label>&nbsp;<input id="input-runningTime"/></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="bnt-submit-movie">Send message</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <h3>Add movie</h3>
     <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title"/></div>
