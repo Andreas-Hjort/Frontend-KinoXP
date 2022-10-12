@@ -113,7 +113,6 @@ function editTarget(evt){
     else {
     const id = target.id.replace("-column-id", "")
     document.getElementById("button-edited-submit").onclick = submitEditedShow(id)
-    evt.stopPropagation(); 
   }  
 }
 
