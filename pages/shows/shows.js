@@ -1,4 +1,5 @@
-const URL = "https://kinoxp.azurewebsites.net/shows/"
+//const URL = "https://kinoxp.azurewebsites.net/shows/"
+const URL = "http://localhost:8080/shows/"
 import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initShows() {
@@ -61,7 +62,7 @@ function addOne() {
 
 function submitEditedShow() { 
     const editedShow = {}
-    editedShow.id = document.getElementById("id-editshow").innerText
+    editedShow.id = document.getElementById("id-editshow").value
     editedShow.theater = document.getElementById("modal-input-theater").value
     editedShow.showingTime = document.getElementById("modal-input-showingTime").value
     editedShow.movieID = document.getElementById("modal-input-movie").value
@@ -70,12 +71,10 @@ function submitEditedShow() {
     //Build the options object requred for a PUT 
     const options = {}
     options.method = "PUT"
-    options.headers = { "Content-type": "application/json",
-    'Access-Control-Allow-Origin' : '*',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'}
+    options.headers = { "Content-type": "application/json"}
     options.body = JSON.stringify(editedShow)
     //Observe, id is added to the URL
-    fetch(URL + editedShow.id, options)
+    fetch(URL + editedShow.id + "/" + editedShow.theater + "/" + editedShow.showingTime + "/" + editedShow.movieID, options)
         .then(r => {
             console.log("No Data returned from the server")
             alert("Show was succesfully edited - Not the right way to report this")
@@ -90,10 +89,28 @@ function editTarget(evt){
     }
     else {
     const id = target.id.replace("-column-id", "")
-    document.getElementById("id-editcar").innerText = id
+    document.getElementById("id-editshow").value = id
     document.getElementById("btn-edited-submit").onclick = submitEditedShow
   }  
 }
+
+
+$(document).ready(function(){
+    function alignModal(){
+        var modalDialog = $(this).find(".modal-dialog");
+        
+        // Applying the top margin on modal to align it vertically center
+        modalDialog.css("margin-center", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+    }
+    // Align modal when it is displayed
+    $(".modal").on("shown.bs.modal", alignModal);
+    
+    // Align modal when user resize the window
+    $(window).on("resize", function(){
+        $(".modal:visible").each(alignModal);
+    });   
+});
+
 
 
 
