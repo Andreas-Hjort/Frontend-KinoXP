@@ -108,6 +108,7 @@ function submitEditedShow(id) {
  */
 
   function editTarget(evt){
+    evt.preventDefault();
     const target = evt.target
     const id = target.id.replace("-column-id", "")
     submitEditedShow(id)
