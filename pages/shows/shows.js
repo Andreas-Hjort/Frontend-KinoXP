@@ -5,7 +5,6 @@ export function initShows() {
     fetchAllShows()
     addOne() 
     document.getElementById("tbl-body").onclick = editTarget
-    submitEditedShow(editTarget)
 }
 
 
@@ -60,7 +59,7 @@ function addOne() {
 }
 
 
-function submitEditedShow(id) {
+function submitEditedShow(id) { 
     document.getElementById("btn-edited-submit").onclick = makeNewShow(id)
     function makeNewShow(findid){
     const editedShow = {}
@@ -108,11 +107,18 @@ function submitEditedShow(id) {
 }
  */
 
-  function editTarget(evt){
+ function editTarget(evt){
     const target = evt.target
+    if (!target.id.includes("-column-id")) {
+    return
+  }
+  else {
     const id = target.id.replace("-column-id", "")
-    return id; 
+    document.getElementById("button-edited-submit").onclick =submitEditedShow(id)
+  }  
 }
+
+
 
 
 
