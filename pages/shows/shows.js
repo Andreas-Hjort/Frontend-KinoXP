@@ -60,10 +60,8 @@ function addOne() {
 
 
 function submitEditedShow(id) { 
-    document.getElementById("btn-edited-submit").onclick = makeNewShow(id)
-    function makeNewShow(findid){
     const editedShow = {}
-    editedShow.id = findid
+    editedShow.id = id
     editedShow.theater = document.getElementById("modal-input-theater").value
     editedShow.showingTime = document.getElementById("modal-input-showingTime").value
     editedShow.movieID = document.getElementById("modal-input-movie").value
@@ -85,7 +83,7 @@ function submitEditedShow(id) {
         })
 
     }
-}
+
 
 
 /**function editOne(evt) {
@@ -107,14 +105,14 @@ function submitEditedShow(id) {
 }
  */
 
- function editTarget(evt){
+function editTarget(evt){
     const target = evt.target
     if (!target.id.includes("-column-id")) {
     return
-  }
-  else {
+    }
+    else {
     const id = target.id.replace("-column-id", "")
-    document.getElementById("button-edited-submit").onclick =submitEditedShow(id)
+    document.getElementById("button-edited-submit").onclick = submitEditedShow(id)
   }  
 }
 
