@@ -27,7 +27,7 @@ function showAllShows(data) {
         <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>  
         </td>
         <td>
-        <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#deleteShowModal">Delete</button>  
+        <button id="${show.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#modal-delete-show">Delete</button>  
         </td>
         </tr>`)
 
@@ -58,6 +58,7 @@ function addOne() {
             .then(addedshow => document.getElementById("returned-new-show").innerText = JSON.stringify(addedshow, null, 2)
             )
     }
+    fetchAllShows;
 }
 
 function submitEditedShow() {
@@ -83,7 +84,20 @@ function submitEditedShow() {
 }
 
 function deleteShow(){
+    document.getElementById("btn-submit-delete").onclick
+    const showToDelete = document.getElementById("id-to-delete").value
+    
 
+    const options ={}
+    options.method="DELETE"
+    options.headers = { "Content-type": "application/json" }
+    options.body = JSON.stringify(showToDelete)
+    fetch(URL + showToDelete, options).then(r => {
+        console.log("No Data returned from the server")
+        console.log(showToDelete)
+        alert("Show was succesfully deleted - Not the right way to report this")
+    })
+    fetchAllShows;
 }
 
 function editTarget(evt) {
@@ -95,7 +109,7 @@ function editTarget(evt) {
         const id = target.id.replace("-column-id", "")
         document.getElementById("id-editshow").value = id
         document.getElementById("btn-edited-submit").onclick = submitEditedShow
-
+        document.getElementById("btn-submit-delete").onclick = deleteShow;
     }
 }
 
