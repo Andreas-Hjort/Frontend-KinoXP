@@ -48,7 +48,7 @@ function addOne() {
 
         //Build the options object requred for a POST
         const options = {}
-        options.method = "PUT"
+        options.method = "POST"
         options.headers = { "Content-type": "application/json" }
         options.body = JSON.stringify(newShow)
 
