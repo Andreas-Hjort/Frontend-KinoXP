@@ -1,8 +1,9 @@
-const URL = "https://kinoxp.azurewebsites.net/movies/"
+//const URL = "https://kinoxp.azurewebsites.net/movies/"
+const URL = "http://localhost:8080/movies/"
 import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initMovies(){
-    document.getElementById("tbl-body").onclick = showAllMovies
+    document.getElementById("tbl-body").onclick = targetMovieId
     fetchAllMovies()
     addOne()
 }
@@ -22,7 +23,9 @@ function showAllMovies(data){
         <td>${movie.runningTime}</td>
         <td>${movie.created}</td>
         <td>${movie.edited}</td>
-    
+        <td>
+        <button id="${movie.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>  
+        </td>
         </tr>`)
 
         const tableRowsString = tableRows.join("\n")
@@ -50,9 +53,31 @@ function addOne() {
 
       fetch(URL, options)
         .then(r => r.json())
-        .then(addedmovie => document.getElementById("returned-new-movie").innerText = JSON.stringify(addedmovie, null, 2)
-        )
     }
+  }
+
+  function deleteOne(){
+    document.getElementById("btn-delete-movie").oneclick
+    showToDelete = document.getElementById("id-to-delete").value
+
+    const options ={}
+    options.method="DELETE"
+    options.headers = { "Content-type": "application/json" }
+    options.body = JSON.stringify(showToDelete)
+    fetch(URL + showToDelete).then(r =>r.JSON)
+  }
+
+  function targetMovieId(evt) {
+    const target = evt.target
+    if (!target.id.includes("-column-id")) {
+        return
+    }
+    else {
+        const id = target.id.replace("-column-id", "")
+        document.getElementById("id-to-delete").value = id
+        document.getElementById("bnt-submit-delete").onclick = deleteOne
+    }
+
   }
 
 //  <td>
