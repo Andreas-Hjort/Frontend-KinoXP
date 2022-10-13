@@ -58,7 +58,7 @@ function addOne() {
             .then(addedshow => document.getElementById("returned-new-show").innerText = JSON.stringify(addedshow, null, 2)
             )
     }
-    fetchAllShows;
+    initShows;
 }
 
 function submitEditedShow() {
@@ -97,7 +97,7 @@ function deleteShow(){
         console.log(showToDelete)
         alert("Show was succesfully deleted - Not the right way to report this")
     })
-    fetchAllShows;
+    initShows;
 }
 
 function editTarget(evt) {
