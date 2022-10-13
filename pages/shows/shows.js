@@ -108,6 +108,7 @@ function editTarget(evt) {
     else {
         const id = target.id.replace("-column-id", "")
         document.getElementById("id-editshow").value = id
+        document.getElementById("id-to-delete").value = id
         document.getElementById("btn-edited-submit").onclick = submitEditedShow
         document.getElementById("btn-submit-delete").onclick = deleteShow;
     }
