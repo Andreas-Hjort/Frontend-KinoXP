@@ -1,77 +1,80 @@
 <template>
 
-   
-    <div class="body-table">
-      
-        <div class="container-table"> 
-            <h3 class="h3-logo">Available movies</h3>
-        <div class="center">
-            <button id="add-movie" type="button" class="custom-btn btn-1" data-bs-toggle="modal" data-bs-target="#modal-add-movie">Add movie</button>  
-          </div>
-            <table>
-                <thead>
-    
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Age limit</th>
-                        <th scope="col">Production year</th>
-                        <th scope="col">Running time</th>   
-                        <th scope="col">Created</th>
-                        <th scope="col">Last edited</th>
-                        <th scope="col"></th>
-                    </tr>
-             
-                </thead>
-                <tbody id="tbl-body">
-                </tbody>
-            </table>
-        </div>
+
+  <div class="body-table">
+    <div class="container-table">
+      <h3 class="h3-logo">Available movies</h3>
+      <div class="center">
+        <button id="add-movie" type="button" class="custom-btn btn-1" data-bs-toggle="modal"
+          data-bs-target="#modal-add-movie">Add movie</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Age limit</th>
+            <th scope="col">Production year</th>
+            <th scope="col">Running time</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody id="tbl-body">
+          <tr>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="modal" tabindex="-1" role="dialog" id="modal-add-movie">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content" style="position:absolute; top: 150px;">
-            <div class="modal-header">
-              <h5 class="modal-title">Add movie</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="position:absolute; top: 150px;">
+          <div class="modal-header">
+            <h5 class="modal-title">Add movie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title" /></div>
+            <div><label for="input-genre" style="min-width: 6em;">Genre</label>&nbsp;<input id="input-genre" /></div>
+            <div><label for="input-ageLimit" style="min-width: 6em;">Age limit</label>&nbsp;<input
+                id="input-ageLimit" />
             </div>
-            
-            <div class="modal-body">
-                <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title"/></div>
-                <div><label for="input-genre" style="min-width: 6em;">Genre</label>&nbsp;<input id="input-genre"/></div>
-                <div><label for="input-ageLimit" style="min-width: 6em;">Age limit</label>&nbsp;<input id="input-ageLimit"/></div>
-                <div><label for="input-productionYear" style="min-width: 6em;">Production year</label>&nbsp;<input id="input-productionYear"/></div>
-                <div><label for="input-runningtime" style="min-width: 6em;">Running time</label>&nbsp;<input id="input-runningTime"/></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="bnt-submit-movie">Send message</button>
-            </div>
+            <div><label for="input-productionYear" style="min-width: 6em;">Production year</label>&nbsp;<input
+                id="input-productionYear" /></div>
+            <div><label for="input-runningtime" style="min-width: 6em;">Running time</label>&nbsp;<input
+                id="input-runningTime" /></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="bnt-submit-movie">Send message</button>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="modal" tabindex="-1" role="dialog" id="modal-delete-movie">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content" style="position:absolute; top: 150px;">
-            <div class="modal-header">
-              <h5 class="modal-title">Delete movie</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            
-            <div class="modal-body">
-             <input id="id-to-delete"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="bnt-submit-delete">Send message</button>
-            </div>
+    <div class="modal" tabindex="-1" role="dialog" id="modal-delete-movie">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="position:absolute; top: 150px;">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete movie</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div><input id="id-to-delete" type="hidden"></div>
+            <div><label for="input-title" style="min-width: 6em;">Title</label>&nbsp;<input id="input-title" /></div>
+            <div><p>Are you sure you want to delete?</p></div>
+          </div>
+        
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="btn-delete-movie">Send message</button>
           </div>
         </div>
       </div>
+    </div>
+
 </template>
