@@ -21,8 +21,6 @@ function showAllMovies(data){
         <td>${movie.ageLimit}</td>
         <td>${movie.productionYear}</td>
         <td>${movie.runningTime}</td>
-        <td>${movie.created}</td>
-        <td>${movie.edited}</td>
         <td>
         <button id="${movie.id}-column-id" type="button"  class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</button>  
         </td>
