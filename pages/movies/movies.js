@@ -13,10 +13,10 @@ export async function fetchAllMovies() {
   showAllMovies(moviesFromServer)
 }
 
+
 function showAllMovies(data) {
   const tableRows = data.map(movie => `
         <tr>
-        <td>${movie.id}</td>
         <td>${movie.title}</td>
         <td>${movie.genre}</td>
         <td>${movie.ageLimit}</td>
@@ -30,6 +30,7 @@ function showAllMovies(data) {
   const tableRowsString = tableRows.join("\n")
   document.getElementById("tbl-body").innerHTML = sanitizeStringWithTableRows(tableRowsString)
 }
+
 
 function addOne() {
   document.getElementById("bnt-submit-movie").onclick = makeNewMovie
@@ -81,8 +82,24 @@ function targetMovieId(evt) {
     document.getElementById("id-to-delete").value = id
     document.getElementById("btn-delete-movie").onclick = deleteMovie
   }
+}
+
+export async function fetchMovieToEdit(htmlId){
+
+  const showsValuesForDropdown = await fetch(URL).then(res => res.json())
+  editMovieDropdown(showsValuesForDropdown, htmlId)
 
 }
+
+export function editMovieDropdown(data, htmlId){
+  const optionsRows = data.map(movie =>  `
+      <option value="${movie.id}">${movie.title}</option>
+  `)
+  document.getElementById("movie-select" + htmlId).innerHTML = optionsRows
+}
+
+
+
 
 //  <td>
 //<--!<button> id="${movie.id}-column-id" type="button" skal lige færdigøres-->

@@ -3,16 +3,18 @@
     <div class="container-table">
       <h3 class="h3-logo">Available Shows</h3>
       <div class="center">
-          <button id="add-show" type="button" class="custom-btn btn-1" data-bs-toggle="modal" data-bs-target="#modal-add-show">Add Show</button>  
-        </div>
+        <button id="add-show" type="button" class="custom-btn btn-1" data-bs-toggle="modal"
+          data-bs-target="#modal-add-show">Add Show</button>
+      </div>
       <table>
         <thead>
           <tr>
             <th scope="col">Title</th>
             <th scope="col">Genre</th>
             <th scope="col">Theater</th>
-            <th scope="col">Production year</th>
-            <th scope="col">Running time</th>
+            <th scope="col">Movie length</th>
+            <th scope="col">Time</th>
+            <th scope="col">Date</th>
             <th scope="col"></th>
             <th scope="col"></th>
           </tr>
@@ -23,80 +25,106 @@
         </tbody>
       </table>
     </div>
-   <div class="modal" style="position: absolute; top:150px;" tabindex="-1" role="dialog" id="exampleModal">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Edit show</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-           <input id="id-editshow" type="hidden" />
-            <div><label for="modal-input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="modal-input-theater">
-            </div>
-            <div><label for="modal-input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input
-                id="modal-input-showingTime" type="number"/>
-            </div>
-            <div><label for="modal-input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="modal-input-movie" /></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btn-edited-submit" data-bs-dismiss="modal">Edit Show</button>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id="modal-add-show">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" style="position:absolute; top: 150px;">
-          <div class="modal-header">
-            <h5 class="modal-title">Add Show</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          
-          <div class="modal-body">
-            <div><label for="input-theater" style="min-width: 6em;">Theater</label>&nbsp;<input id="input-theater"></div>
-            <div><label for="input-showingTime" style="min-width: 6em;">ShowingTime</label>&nbsp;<input id="input-showingtime"
-                type="number" />
-            </div>
-            <div><label for="input-movie" style="min-width: 6em;">Movie</label>&nbsp;<input id="input-movie" /></div>
-        
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="bnt-submit-show" data-bs-dismiss="modal">Add Show</button>
-          </div>
+  <!--__________________________________Modal for editing show__________________________________________________________________________-->
+  <div class="modal" style="position: absolute; top:150px;" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title-color" id="movie-title">Chosen show to edit</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input id="id-editshow" type="hidden" />
+          <label id="show-title-edit"></label><br>
+          <label id="show-genre-edit"></label><br>
+          <label id="show-theater-edit"></label><br>
+          <label id="show-date-edit"></label><br>
+          <hr>
+          <h5>Changes:</h5><br>
+          <select id="movie-select-edit"></select><br>
+          <br>
+          <select id="select-theater">
+            <option value="0">Small Theater</option>
+            <option value="1">Big Theater</option>
+          </select><br>
+          <br>
+          <select id="select-date-edit">Date</select><br>
+          <br>
+          <select id="select-time-edit" style="min-width: 14em;"></select><br>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btn-edited-submit" data-bs-dismiss="modal">Edit
+            Show</button>
         </div>
       </div>
     </div>
+  </div>
+  </div>
 
-    <div class="modal" tabindex="-1" role="dialog" id="modal-delete-show">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" style="position:absolute; top: 150px;">
-          <div class="modal-header">
-            <h5 class="modal-title">Delete Show</h5>
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          
-          <div class="modal-body">
-            <div>
-              <input id="id-to-delete" type="hidden" />
-            </div>
-            <div><p>Are you sure you want to delete?</p></div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="btn-submit-delete" data-bs-dismiss="modal" >DELETE</button>
-          </div>
+
+
+  <!--__________________________________Modal for Adding show__________________________________________________________________________-->
+  <div class="modal" tabindex="-1" role="dialog" id="modal-add-show">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="position:absolute; top: 150px;">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Show</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <select id="movie-select-add"></select><br>
+          <br>
+          <select id="select-theater">
+            <option value="0">Small Theater</option>
+            <option value="1">Big Theater</option>
+          </select><br>
+          <br>
+          <select id="select-date-add">Date</select><br>
+          <br>
+          <select id="select-time-add" style="min-width: 14em;"></select><br>
+          <br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="bnt-submit-show" data-bs-dismiss="modal">Add Show</button>
         </div>
       </div>
     </div>
-  
+  </div>
+
+
+  <!--__________________________________Modal for Deleting show__________________________________________________________________________-->
+  <div class="modal" tabindex="-1" role="dialog" id="modal-delete-show">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="position:absolute; top: 150px;">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Movie</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to delete the following Show?</p>
+            <input id="id-to-delete" type="hidden" />
+            <label id="show-title-delete"></label><br>
+            <label id="show-genre-delete"></label><br>
+            <label id="show-theater-delete"></label><br>
+            <label id="show-date-delete"></label><br>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btn-submit-delete" data-bs-dismiss="modal">DELETE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>
