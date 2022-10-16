@@ -1,5 +1,5 @@
-//const URL = "https://kinoxp.azurewebsites.net/movies/"
-const URL = "http://localhost:8080/movies/"
+const URL = "https://kinoxp.azurewebsites.net/movies/"
+//const URL = "http://localhost:8080/movies/"
 import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initMovies() {

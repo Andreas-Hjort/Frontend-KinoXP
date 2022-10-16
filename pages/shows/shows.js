@@ -1,5 +1,5 @@
-//const URL = "https://kinoxp.azurewebsites.net/shows/"
-const URL = "http://localhost:8080/shows/"
+const URL = "https://kinoxp.azurewebsites.net/shows/"
+//const URL = "http://localhost:8080/shows/"
 
 import { sanitizeStringWithTableRows } from "../../utils.js"
 import { fetchMovieToEdit } from "../movies/movies.js"
@@ -15,6 +15,7 @@ export async function fetchAllShows() {
     const showsFromServer = await fetch(URL).then(res => res.json())
     showAllShows(showsFromServer)
 }
+
 
 function showAllShows(data) {
     const tableRows = data.map(show => `

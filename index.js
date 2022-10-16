@@ -8,11 +8,11 @@ import {
 import { initMovies } from "./pages/movies/movies.js"
 import { initShows } from "./pages/shows/shows.js"
 
+
 window.addEventListener("load", async () => {
 
   const templateMovies = await loadTemplate("./pages/movies/movies.html")
   const templateShows = await loadTemplate("./pages/shows/shows.html")
-  const templateNotFound = await loadTemplate("./pages/notFound/notFound.html")
 
   adjustForMissingHash()
 
@@ -43,6 +43,11 @@ window.addEventListener("load", async () => {
       "/shows": () => {
         renderTemplate(templateShows, "content")
         initShows()
+      },
+  
+      "/bookings": () => {
+        renderTemplate(templateShows, "content")
+        initBookings()
       },
     })
     .notFound(() => {
