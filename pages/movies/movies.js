@@ -4,7 +4,7 @@ import { sanitizeStringWithTableRows } from "../../utils.js"
 
 export function initMovies() {
   fetchAllMovies()
-  addOne()
+  addMovie()
   document.getElementById("tbl-body").onclick = targetMovieId
 }
 
@@ -32,7 +32,7 @@ function showAllMovies(data) {
 }
 
 
-function addOne() {
+function addMovie() {
   document.getElementById("bnt-submit-movie").onclick = makeNewMovie
   function makeNewMovie() {
     const newMovie = {}
